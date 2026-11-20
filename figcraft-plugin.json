@@ -1,0 +1,18 @@
+{
+  "id": "me.benetti.figcraft-plugin-test",
+  "name": "FigCraft Plugin Test",
+  "version": "0.1.0",
+  "description": "A test bench for FigCraft plugin API behaviours: pick a test case and see on screen what the plugin received.",
+  "author": "Rick Benetti",
+  "main": "figcraft_plugin_test.wasm",
+  "api": 2,
+  "permissions": {
+    "access": "read"
+  },
+  "commands": [
+    {
+      "id": "open",
+      "label": "Open test bench…"
+    }
+  ]
+}
