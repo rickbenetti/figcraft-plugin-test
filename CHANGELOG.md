@@ -36,8 +36,10 @@ First version.
 
 - **How it was tested.** `cargo test` (22 tests) and `cargo clippy` pass. The module was also loaded and driven, panel by panel,
   in the plugin sandbox of the FigCraft `v0.14.0` sources (the `figcraft-plugin` crate: manifest and panel validation, the
-  WebAssembly interpreter), with the order of the events simulated from the source of the app's panel. It was **not** run
-  inside the FigCraft 0.18.1 window: that is what the case `panel-button-field-order` is for.
+  WebAssembly interpreter), with the order of the events simulated from the source of the app's panel. It was then run inside the
+  FigCraft 0.18.1 window (2026-11-20): with the button above the field (panels A and C) the click reaches the
+  plugin before the typed value and `note` arrives empty in the click event; with the field above the button
+  (panel B, and `save2` in panel C) the click carries the typed value. See the case `panel-button-field-order`.
 - All texts are in English; there is no language setting.
 - A case sees only what the SDK exposes of the plugin input (`command`, `params`, `selection`, `event`, `values`, `widget`). A
   field the plugin API adds later is not visible until the SDK tag is updated.
